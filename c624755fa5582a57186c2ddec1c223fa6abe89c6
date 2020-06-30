@@ -1,0 +1,1 @@
+{"jobID":"8945b53e-a48f-ee94-d616-285816a23b81","spec":{"type":"policy","cause":{"Message":"","User":"Maxim Kovalov \u003cmax.kovalov@gmail.com\u003e"},"spec":{"prod:helmrelease/matomo":{"add":{"tag_all":"glob:3.13.*"},"remove":{}}}},"result":null}
