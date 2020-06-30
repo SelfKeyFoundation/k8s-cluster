@@ -7,6 +7,7 @@ metadata:
   annotations:
     fluxcd.io/automated: "true"
     fluxcd.io/tag.podinfod: glob:3.13.*
+    fluxcd.io/tag.chart-image: glob:3.13.*
 spec:
   releaseName: matomo
   chart:
