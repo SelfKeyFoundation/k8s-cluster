@@ -6,6 +6,7 @@ metadata:
   namespace: prod
   annotations:
     fluxcd.io/automated: "true"
+    fluxcd.io/tag.podinfod: glob:3.13.*
 spec:
   releaseName: matomo
   chart:
@@ -17,7 +18,7 @@ spec:
       repository: matomo
       tag: '3.13'
     replicaCount: 1
-    matomo: 
+    matomo:
       proxyUri: 'yes'
     db:
       port: '3306'
