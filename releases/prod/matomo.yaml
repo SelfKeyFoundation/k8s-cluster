@@ -1,0 +1,31 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: matomo
+  namespace: prod
+  annotations:
+    fluxcd.io/automated: "true"
+spec:
+  releaseName: matomo
+  chart:
+    git: git@github.com:SelfKeyFoundation/matomo
+    path: charts/matomo
+    ref: master
+  values:
+    image:
+      repository: matomo
+      tag: '3.13.6'
+    replicaCount: 1
+    matomo: 
+      proxyUri: 'yes'
+    db:
+      port: '3306'
+      host: '127.0.0.1'
+    dbProxy:
+      instances: "-instances=selfkey2:asia-east2:matomo=tcp:3306"
+    gcePersistentDisk:
+      pdName: matomo-nfs-disk
+      fsType: ext4
+      size: 20Gi
+    dbServiceAccount: matomo-sql
