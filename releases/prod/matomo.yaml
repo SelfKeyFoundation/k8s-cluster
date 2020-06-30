@@ -15,7 +15,7 @@ spec:
   values:
     image:
       repository: matomo
-      tag: '3.13.6'
+      tag: '3.13'
     replicaCount: 1
     matomo: 
       proxyUri: 'yes'
