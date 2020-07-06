@@ -17,7 +17,7 @@ spec:
   values:
     image:
       repository: matomo
-      tag: '3.13.6-apache'
+      tag: '3-fpm-alpine'
     replicaCount: 1
     matomo:
       proxyUri: 'yes'
