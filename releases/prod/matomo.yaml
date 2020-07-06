@@ -6,7 +6,8 @@ metadata:
   namespace: prod
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/tag.chart-image: glob:3.13.*-apache
+    fluxcd.io/tag.matomo: glob:3.13.*-apache
+
 spec:
   releaseName: matomo
   chart:
