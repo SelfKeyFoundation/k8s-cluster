@@ -1,10 +1,10 @@
 apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
-  name: wildcard-stage
+  name: org-selfkey-gc-wc
   namespace: prod
 spec:
-  secretName: cert-stage-wildcard
+  secretName: org-selfkey-gc-wc
   issuerRef:
     name: letsencrypt-production
     kind: ClusterIssuer

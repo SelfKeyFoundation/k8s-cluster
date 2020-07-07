@@ -31,4 +31,5 @@ spec:
       size: 20Gi
     dbServiceAccount: matomo-sql
     ingressDomain: matomo.gc.selfkey.org
-    tlsSecret: cert-stage-wildcard
+    tlsSecret: org-selfkey-gc-wc
+    ingressHttpDisable: true
