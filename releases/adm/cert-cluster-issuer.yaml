@@ -7,18 +7,18 @@ spec:
   acme:
     # The ACME server URL
     # The production API is used for the ClusterIssuer
-    server: https://acme-v02.api.letsencrypt.org/directory
-    # server: https://acme-staging-v02.api.letsencrypt.org/directory
+    # server: https://acme-v02.api.letsencrypt.org/directory
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
     # Email address used for ACME registration
     email: "maxim@kyc-chain.com"
     # name is used for storing the ACME account key.
     # the secret will be created by cert-manager after ACME registration
     privateKeySecretRef:
       name: letsencrypt-production
-    dns01:
-      providers:
-      - name: google-clouddns
+    solvers:
+    - dns01:
         clouddns:
+          project: selfkey2
           serviceAccountSecretRef:
             name: external-dns
             key: credentials.json
