@@ -1,11 +1,21 @@
-apiVersion: cert-manager.io/v1alpha2
+apiVersion: certmanager.k8s.io/v1alpha1
 kind: Certificate
 metadata:
-  name: selfsigned-cert
-  namespace: prod
+  name: wildcard-stage
+  namespace: pord
 spec:
-  dnsNames:
-    - example.com
-  secretName: selfsigned-cert-tls
+  secretName: cert-stage-wildcard
   issuerRef:
-    name: test-selfsigned
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: '*.gc.selfkey.org'
+  dnsNames:
+  - gc.selfkey.org
+  - '*.gc.selfkey.org'
+  acme:
+    config:
+    - dns01:
+        provider: google-clouddns
+      domains:
+      - gc.selfkey.org
+      - '*.gc.selfkey.org'
