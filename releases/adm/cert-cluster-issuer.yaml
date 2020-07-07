@@ -15,7 +15,7 @@ spec:
     # the secret will be created by cert-manager after ACME registration
     privateKeySecretRef:
       name: letsencrypt-production
-    ns01:
+    dns01:
       providers:
       - name: google-clouddns
         clouddns:
