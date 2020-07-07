@@ -17,5 +17,5 @@ spec:
       defaultACMEChallengeType: dns01
       defaultACMEDNS01ChallengeProvider: google-clouddns
     extraArgs:
-      - '--dns01-recursive-nameservers=8.8.8.8:53\,1.1.1.1:53'
+      - '--dns01-recursive-nameservers=8.8.8.8:53,1.1.1.1:53'
     
