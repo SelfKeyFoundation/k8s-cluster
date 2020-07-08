@@ -30,6 +30,6 @@ spec:
       fsType: ext4
       size: 20Gi
     dbServiceAccount: matomo-sql
-    # ingressDomain: matomo.gc.selfkey.org
-    # tlsSecret: org-selfkey-gc-wc
+    ingressDomain: matomo.gc.selfkey.org
+    tlsSecret: org-selfkey-gc-wc
     # ingressHttpDisable: true
