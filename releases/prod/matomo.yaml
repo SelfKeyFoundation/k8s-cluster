@@ -33,3 +33,10 @@ spec:
     ingressDomain: matomo.gc.selfkey.org
     tlsSecret: org-selfkey-gc-wc
     # ingressHttpDisable: true
+    resources:
+      limits:
+        cpu: 0.5
+        memory: 0.5Gi
+      requests:
+        cpu: 1
+        memory: 1G
