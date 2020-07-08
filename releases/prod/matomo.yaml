@@ -32,6 +32,7 @@ spec:
     dbServiceAccount: matomo-sql
     ingressDomain: matomo.gc.selfkey.org
     tlsSecret: org-selfkey-gc-wc
+    websiteUrl: 'https://analytics.selfkey.org'
     # ingressHttpDisable: true
     resources:
       limits:
