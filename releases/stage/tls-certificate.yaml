@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: org-selfkey-gc-wc
+  namespace: stage
+spec:
+  secretName: org-selfkey-gc-wc
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: '*.gc.selfkey.org'
+  dnsNames:
+  - gc.selfkey.org
+  - '*.gc.selfkey.org'
+  acme:
+    config:
+    - dns01:
+        provider: google-clouddns
+      domains:
+      - gc.selfkey.org
+      - '*.gc.selfkey.org'

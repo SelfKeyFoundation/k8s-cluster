@@ -1,0 +1,28 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: selfkey-api-stage
+  namespace: stage
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/tag.chart-image: glob:dev-*
+spec:
+  releaseName: matomo
+  chart:
+    git: git@github.com:SelfKeyFoundation/selfkey-api
+    path: charts/selfkey-api
+    ref: dev
+  values:
+    image: asia.gcr.io/selfkey2/selfkey-api:dev-bdc9367d599120d47ddcb457de5a9151b1ea7d52
+    replicaCount: 1
+    ingressDomain: stage-api.gc.selfkey.org
+    tlsSecret: org-selfkey-gc-wc
+    # ingressHttpDisable: true
+    resources:
+      limits:
+        cpu: 0.5
+        memory: 0.2Gi
+      requests:
+        cpu: 0.2
+        memory: 0.1Gi
