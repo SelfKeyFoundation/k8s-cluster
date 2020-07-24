@@ -1,0 +1,28 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: selfkey-webmp-stage
+  namespace: stage
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/tag.chart-image: glob:dev-*
+spec:
+  releaseName: selfkey-webmp-stage
+  chart:
+    git: git@github.com:SelfKeyFoundation/web-marketplaces
+    path: charts/web-marketplaces
+    ref: dev
+  values:
+    image: asia.gcr.io/selfkey2/web-marketplaces:dev-f76e8cc5d8bd634cece8e28bff5fda8013776080
+    replicaCount: 1
+    ingressDomain: stage-webmp.gc.selfkey.org
+    tlsSecret: org-selfkey-gc-wc
+    # ingressHttpDisable: true
+    resources:
+      limits:
+        cpu: 0.5
+        memory: 0.2Gi
+      requests:
+        cpu: 0.2
+        memory: 0.1Gi
