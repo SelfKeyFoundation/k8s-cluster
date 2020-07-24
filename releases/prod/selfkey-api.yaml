@@ -2,21 +2,21 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: selfkey-api-stage
-  namespace: stage
+  name: selfkey-api-prod
+  namespace: prod
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/tag.chart-image: glob:dev-*
+    fluxcd.io/tag.chart-image: glob:master-*
 spec:
-  releaseName: selfkey-api-stage
+  releaseName: selfkey-api-prod
   chart:
     git: git@github.com:SelfKeyFoundation/selfkey-api
     path: charts/selfkey-api
-    ref: dev
+    ref: master
   values:
-    image: asia.gcr.io/selfkey2/selfkey-api:dev-bdc9367d599120d47ddcb457de5a9151b1ea7d52
+    image: asia.gcr.io/selfkey2/selfkey-api:master-6c3ee89817b900e866a60080b4636491b9ab2fef
     replicaCount: 1
-    ingressDomain: stage-api.gc.selfkey.org
+    ingressDomain: api.gc.selfkey.org
     tlsSecret: org-selfkey-gc-wc
     # ingressHttpDisable: true
     resources:
