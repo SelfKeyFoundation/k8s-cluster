@@ -26,3 +26,14 @@ spec:
       requests:
         cpu: 0.2
         memory: 0.1Gi
+    mongodb:
+      enabled: true
+      clusterDomain: cluster.local
+      architecture: replicaset
+      auth:
+        enabled: true
+        username: selfkey
+        database: selfkey-api
+        existingSecret: sk-api-mongo
+      persistence:
+        size: 8Gi
