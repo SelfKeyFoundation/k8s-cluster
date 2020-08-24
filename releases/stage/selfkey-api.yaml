@@ -14,7 +14,7 @@ spec:
     path: charts/selfkey-api
     ref: dev
   values:
-    image: asia.gcr.io/selfkey2/selfkey-api:dev-f76e8cc5d8bd634cece8e28bff5fda8013776080
+    image: asia.gcr.io/selfkey2/selfkey-api:dev-5ca88c784ea066a24d1774748585617f131f123d
     replicaCount: 1
     ingressDomain: stage-api.gc.selfkey.org
     tlsSecret: org-selfkey-gc-wc
