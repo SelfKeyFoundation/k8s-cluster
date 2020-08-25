@@ -27,7 +27,7 @@ spec:
         cpu: 0.2
         memory: 0.1Gi
     mongodb:
-      enabled: false
+      enabled: true
       clusterDomain: cluster.local
       architecture: replicaset
       auth:
