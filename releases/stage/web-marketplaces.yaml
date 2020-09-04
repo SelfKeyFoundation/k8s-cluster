@@ -14,7 +14,7 @@ spec:
     path: charts/web-marketplaces
     ref: dev
   values:
-    image: asia.gcr.io/selfkey2/web-marketplaces:dev-e60e4f295a91f131d31b700ddf2c0bc2b763ac00
+    image: asia.gcr.io/selfkey2/web-marketplaces:dev-71f25141b0a35df279075916433d0f5541731cbf
     replicaCount: 1
     ingressDomain: stage-webmp.gc.selfkey.org
     tlsSecret: org-selfkey-gc-wc
