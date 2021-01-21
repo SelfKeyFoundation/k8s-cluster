@@ -11,7 +11,7 @@ spec:
   releaseName: selfkey-web-stage
   chart:
     git: git@github.com:SelfKeyFoundation/selfkey-web
-    path: charts/web-marketplaces
+    path: charts/selfkey-web
     ref: dev
   values:
     image: asia.gcr.io/selfkey2/selfkey-web@sha256:1f59131fc6f1c96be72cb2bcc6cb6d761a336e18ff383568f7224b48eac61cbc
