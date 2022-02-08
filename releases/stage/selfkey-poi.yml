@@ -9,21 +9,21 @@ metadata:
 spec:
   releaseName: selfkey-poi-stage
   chart:
-    git: git@github.com:SelfKeyFoundation/selfkey-poi-service
-    path: charts/selfkey-poi
-    ref: dev
+    git: git@github.com:SelfKeyFoundation/poi-service
+    path: charts/poi-service
+    ref: master
   values:
-    image: asia.gcr.io/selfkey2/selfkey-poi-service:v1.0.2
+    image: asia.gcr.io/selfkey2/selfkey-poi-service
     replicaCount: 1
     ingressDomain: stage-poi.gc.selfkey.org
     tlsSecret: org-selfkey-gc-wc
     # ingressHttpDisable: true
     resources:
       limits:
-        cpu: 0.5
-        memory: 0.2Gi
+        cpu: 1
+        memory: 4Gi
       requests:
-        cpu: 0.2
-        memory: 0.1Gi
+        cpu: 1
+        memory: 4Gi
       persistence:
         size: 8Gi
