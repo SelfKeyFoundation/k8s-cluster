@@ -10,7 +10,7 @@ spec:
   releaseName:selfkey-metaproof
   chart:
     git: git@github.com:SelfKeyFoundation/poi-service
-    path: charts/poi-service
+    path: charts/metaproof
     ref: master
   values:
     image: asia.gcr.io/selfkey2/selfkey-metaproof-service

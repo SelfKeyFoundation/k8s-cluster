@@ -11,7 +11,7 @@ spec:
   chart:
     git: git@github.com:SelfKeyFoundation/poi-service
     path: charts/poi-service
-    ref: master
+    ref: staging
   values:
     image: asia.gcr.io/selfkey2/selfkey-poi-service
     replicaCount: 1
