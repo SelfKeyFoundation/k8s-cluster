@@ -1,0 +1,29 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: selfkey-metaproof
+  namespace: stage
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/tag.chart-image: "semver:*"
+spec:
+  releaseName:selfkey-metaproof
+  chart:
+    git: git@github.com:SelfKeyFoundation/poi-service
+    path: charts/poi-service
+    ref: master
+  values:
+    image: asia.gcr.io/selfkey2/selfkey-metaproof-service
+    replicaCount: 1
+    ingressDomain: metaproof.gc.selfkey.org
+    tlsSecret: org-selfkey-gc-wc
+    # ingressHttpDisable: true
+    resources:
+      limits:
+        cpu: 1
+        memory: 4Gi
+      requests:
+        cpu: 1
+        memory: 4Gi
+      persistence:
+        size: 8Gi
