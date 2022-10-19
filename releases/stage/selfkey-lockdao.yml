@@ -5,7 +5,7 @@ metadata:
   namespace: stage
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/tag.chart-image: "semver:*"
+    fluxcd.io/tag.chart-image: glob:staging-*
 spec:
   releaseName: lockdao-service-staging
   chart:

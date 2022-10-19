@@ -5,7 +5,7 @@ metadata:
   namespace: prod
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/tag.chart-image: "semver:*"
+    fluxcd.io/tag.chart-image: glob:master-*
 spec:
   releaseName: lockdao-service
   chart:
