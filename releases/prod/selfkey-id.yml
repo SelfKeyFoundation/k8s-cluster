@@ -1,0 +1,29 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: selfkey-id-service
+  namespace: prod
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/tag.chart-image: glob:master-*
+spec:
+  releaseName: selfkey-id-service
+  chart:
+    git: git@github.com:SelfKeyFoundation/selfkey-id-service
+    path: charts/selfkey-id-service
+    ref: master
+  values:
+    image: asia.gcr.io/selfkey2/selfkey-id-service
+    replicaCount: 1
+    ingressDomain: selfkey-id-service.gc.selfkey.org
+    tlsSecret: org-selfkey-gc-wc
+    # ingressHttpDisable: true
+    resources:
+      limits:
+        cpu: 1
+        memory: 4Gi
+      requests:
+        cpu: 1
+        memory: 4Gi
+      persistence:
+        size: 8Gi
